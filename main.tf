@@ -1,13 +1,13 @@
 #creating VPC
 
-#module "vpc" {
-#  source                      = "/home/ubuntu/vpc/modules"
-#}
+module "vpc" {
+  source                      = "./modules_vpc"
+}
 
 #creating eks
 
 module "eks_cluster" {
-  source                      = "/home/ubuntu/eks-cluster/modules"   #"./eks-cluster"
+  source                      = "./modules"                                                                                                 #"./eks-cluster"
   cluster_name                = "my-eks-cluster"
   region                      = "us-east-1"
   vpc_id                      = "vpc-0b2235733fdf581b4" # module.vpc.instance_vpc_id.id   #"vpc-0b2235733fdf581b4"
